@@ -1,4 +1,5 @@
 %define oname Ino
+Requires python2
 %define lname %(echo %oname | tr [:upper:] [:lower:])
 
 Summary:	A command line toolkit for working with Arduino hardware
@@ -14,7 +15,9 @@ Buildarch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pythonegg(setuptools)
 
-Requires:	python-jinja2
+Requires:	python2
+Requires:	python2-pip
+Requires:	python2-jinja2
 Requires:	pyserial
 Requires:	python-configobj
 Requires:	arduino-core
