@@ -38,8 +38,6 @@ Ino is based on make to perform builds. However Makefiles are generated
 automatically and you'll never see them if you don't want to.
 
 %files -f FILELIST
-#%{_bindir}/%{name}
-#%{python2_sitelib}/%{name}*
 %doc README.rst
 %doc MIT-LICENSE.txt
 
