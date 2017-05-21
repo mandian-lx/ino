@@ -15,9 +15,8 @@ Buildarch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pythonegg(setuptools)
 
-Requires:	python2
-Requires:	python2-pip
-Requires:	python2-jinja2
+Requires:	python
+Requires:	python-jinja2
 Requires:	pyserial
 Requires:	python-configobj
 Requires:	arduino-core
