@@ -1,5 +1,4 @@
 %define oname Ino
-Requires python2
 %define lname %(echo %oname | tr [:upper:] [:lower:])
 
 Summary:	A command line toolkit for working with Arduino hardware
@@ -13,14 +12,15 @@ Source0:	https://pypi.python.org/packages/source/i/%{name}/%{name}-%{version}.ta
 Buildarch:	noarch
 
 BuildRequires:	pkgconfig(python)
-BuildRequires:	pythonegg(setuptools)
+BuildRequires:	python3egg(setuptools)
 
 Requires:	python
-Requires:	python-jinja2
-Requires:	pyserial
-Requires:	python-configobj
+Requires:	python3egg(configobj)
+Requires:	python3egg(pyserial)
+Requires:	python3egg(jinja2)
 Requires:	arduino-core
 Requires:	picocom
+
 
 %description
 Ino is a command line toolkit for working with Arduino hardware
