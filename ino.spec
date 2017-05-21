@@ -49,13 +49,13 @@ automatically and you'll never see them if you don't want to.
 %setup -q
 
 # Force python2
-sed -i -e 's|/usr/bin/env python|/usr/bin/env python2|' ino/runner.py
+#sed -i -e 's|/usr/bin/env python|/usr/bin/env python2|' ino/runner.py
 	
 %build
-%{__python2} setup.py build
+%{__python} setup.py build
 
 %install
-%{__python2} setup.py install --root=%{buildroot} --skip-build --record=FILELIST
+%{__python} setup.py install --root=%{buildroot} --skip-build --record=FILELIST
 
 # remove *.pyc from FILELIST
 sed -i -e '/.pyc/d' FILELIST
