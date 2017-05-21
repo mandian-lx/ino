@@ -13,13 +13,12 @@ Source0:	https://pypi.python.org/packages/source/i/%{name}/%{name}-%{version}.ta
 Buildarch:	noarch
 
 BuildRequires:	pkgconfig(python)
-BuildRequires:	pythonegg(setuptools)
+BuildRequires:	python3egg(setuptools)
 
-Requires:	python2
-Requires:	python2-pip
-Requires:	python2-jinja2
-Requires:	pyserial
-Requires:	python-configobj
+Requires:	python
+Requires:	python3egg(configobj)
+Requires:	python3egg(pyserial)
+Requires:	python3egg(jinja2)
 Requires:	arduino-core
 Requires:	picocom
 
