@@ -11,13 +11,13 @@ URL:		https://inotool.org/
 Source0:	https://pypi.python.org/packages/source/i/%{name}/%{name}-%{version}.tar.gz
 Buildarch:	noarch
 
-BuildRequires:	pkgconfig(python)
-BuildRequires:	python3egg(setuptools)
+BuildRequires:	pkgconfig(python2)
+BuildRequires:	pythonegg(setuptools)
 
-Requires:	python
-Requires:	python3egg(configobj)
-Requires:	python3egg(pyserial)
-Requires:	python3egg(jinja2)
+Requires:	python2
+Requires:	pythonegg(configobj)
+Requires:	pythonegg(pyserial)
+Requires:	pythonegg(jinja2)
 Requires:	arduino-core
 Requires:	picocom
 
@@ -49,21 +49,21 @@ automatically and you'll never see them if you don't want to.
 %setup -q
 
 # Force python2
-#sed -i -e 's|/usr/bin/env python|/usr/bin/env python2|' ino/runner.py
+sed -i -e 's|/usr/bin/env python|/usr/bin/env python2|' ino/runner.py
 	
 %build
-%{__python} setup.py build
+%{__python2} setup.py build
 
 %install
-%{__python} setup.py install --root=%{buildroot} --skip-build --record=FILELIST
+%{__python2} setup.py install --root=%{buildroot} --skip-build --record=FILELIST
 
 # remove *.pyc from FILELIST
 sed -i -e '/.pyc/d' FILELIST
 
 # fix perms for runner.py
-chmod 0755 %{buildroot}%{python3_sitelib}/%{name}/runner.py
+chmod 0755 %{buildroot}%{python_sitelib}/%{name}/runner.py
 
 # remove .holder
-find %{buildroot}%{python3_sitelib}/%{name}/ -name .holder -size 0 -delete
+find %{buildroot}%{python_sitelib}/%{name}/ -name .holder -size 0 -delete
 sed -i -e '/.holder/d' FILELIST
 
