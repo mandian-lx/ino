@@ -14,10 +14,6 @@ Buildarch:	noarch
 BuildRequires:	pkgconfig(python2)
 BuildRequires:	pythonegg(setuptools)
 
-Requires:	python2
-Requires:	pythonegg(configobj)
-Requires:	pythonegg(pyserial)
-Requires:	pythonegg(jinja2)
 Requires:	arduino-core
 Requires:	picocom
 
