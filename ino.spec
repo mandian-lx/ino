@@ -57,9 +57,9 @@ sed -i -e 's|/usr/bin/env python|/usr/bin/env python2|' ino/runner.py
 sed -i -e '/.pyc/d' FILELIST
 
 # fix perms for runner.py
-chmod 0755 %{buildroot}%{python_sitelib}/%{name}/runner.py
+chmod 0755 %{buildroot}%{python2_sitelib}/%{name}/runner.py
 
 # remove .holder
-find %{buildroot}%{python_sitelib}/%{name}/ -name .holder -size 0 -delete
+find %{buildroot}%{python2_sitelib}/%{name}/ -name .holder -size 0 -delete
 sed -i -e '/.holder/d' FILELIST
 
